@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Somando números</title>
+    <style>
+        body {
+            font: normal 18pt Arial;
+        }
+
+        input {
+            font: normal 18pt Arial;
+            width: 100px;
+        }
+
+        #res {
+            margin-top: 20px;
+        }
+
+        #centro {
+            text-align: center;
+            background: chocolate;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="centro">
+        <h1>Somando Valores</h1>
+        <input type="number" name="txtn1" id="txtn1"> +
+        <input type="number" name="txtn2" id="txtn2">
+        <input type="button" value="Somar" onclick="somar()">
+
+        <div id="res">Resultado</div>
+    </div>
+    <script>
+
+        //função soma que pega os dados digitados, converte pra number, realiza a soma e no final mostra o resultado.
+        function somar() {
+            var tn1 = window.document.getElementById('txtn1');
+            var tn2 = window.document.querySelector('input#txtn2');
+            var r = window.document.querySelector('#res');
+
+            //Converter tn1 e tn2 pois eles vem em formato de texto
+            var n1 = Number(tn1.value);
+            var n2 = Number(tn2.value);
+
+            var soma = n1 + n2;
+            (n1 == 0 && n2 == 0)?r.innerHTML = 'Não a valores para somar':r.innerHTML = `A soma entre ${n1} e ${n2} é igual a <strong>${soma}</strong>`;
+                
+            
+        }
+
+    </script>
+</body>
+
+</html>

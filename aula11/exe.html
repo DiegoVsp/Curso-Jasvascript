@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercicio 9</title>
+    <style>
+        body {
+            font: normal 18pt Arial;
+            background: limegreen;
+        }
+
+        input {
+            font: normal 18pt Arial;
+            width: 150px;
+        }
+
+        #res {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Verificar Nacionalidade</h1>
+    digite seu PAÍS: <input type="text" name="txtNaci" id="txtNaci">
+    <input type="button" value="VERIFICAR" onclick="ver()">
+
+    <div id="res">
+
+    </div>
+
+    <script>
+
+
+        function ver() {
+            var nac = window.document.querySelector('#txtNaci');
+            var nacionalidade = nac.value;
+            var menor = nacionalidade.toLowerCase();
+            var result = window.document.querySelector('#res');
+
+
+            if (menor == '') {
+                alert('Digite os dados corretamente');
+            } else if (menor != 'brasil') {
+                result.innerHTML = `<p>Você é Estrangeiro</p>`;
+            } else {
+                result.innerHTML = `<p>Você é Brasileiro</p>`;
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
